@@ -33,20 +33,18 @@ nmodes = 10;         % number of modes to compute
 
 fprintf(1,'neff = %.6f\n',neff);
 
-figure(1);
+
 for n = 1:nmodes
+    figure(1);
     subplot(121);
     contourmode(x,y,Hx(:,:,n));
     title('Hx (TE mode)'); xlabel('x'); ylabel('y');
     for v = edges, line(v{:}); end
-    pause(0.05)
-end
-for n = 1:nmodes
+
     subplot(122);
     contourmode(x,y,Hy(:,:,n));
     title('Hy (TE mode)'); xlabel('x'); ylabel('y');
     for v = edges, line(v{:}); end
-    paus
 end
 
 % Next consider the fundamental TM mode
@@ -56,13 +54,15 @@ end
 
 fprintf(1,'neff = %.6f\n',neff);
 
-figure(2);
-subplot(121);
-contourmode(x,y,Hx);
-title('Hx (TM mode)'); xlabel('x'); ylabel('y'); 
-for v = edges, line(v{:}); end
-
-subplot(122);
-contourmode(x,y,Hy);
-title('Hy (TM mode)'); xlabel('x'); ylabel('y'); 
-for v = edges, line(v{:}); end
+for n = 1:nmodes
+    figure(2);
+    subplot(121);
+    contourmode(x,y,Hx(:,:,n));
+    title('Hx (TM mode)'); xlabel('x'); ylabel('y');
+    for v = edges, line(v{:}); end
+    
+    subplot(122);
+    contourmode(x,y,Hy(:,:,n));
+    title('Hy (TM mode)'); xlabel('x'); ylabel('y');
+    for v = edges, line(v{:}); end
+end

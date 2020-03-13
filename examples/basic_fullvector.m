@@ -45,7 +45,6 @@ for n = 1:nmodes
     contourmode(x,y,Hy(:,:,n));
     title('Hy (TE mode)'); xlabel('x'); ylabel('y');
     for v = edges, line(v{:}); end
-    pause(0.05)
 end
 
 % Next consider the fundamental TM mode
@@ -66,5 +65,4 @@ for n = 1:nmodes
     contourmode(x,y,Hy(:,:,n));
     title('Hy (TM mode)'); xlabel('x'); ylabel('y');
     for v = edges, line(v{:}); end
-    pause(0.05)
 end
